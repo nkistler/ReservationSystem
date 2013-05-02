@@ -9,12 +9,60 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/restaurantName_label"
-        android:textSize="20.5sp" />
+        android:textSize="15.5sp" />
 	<EditText
        android:id="@+id/cinRestaurantName_edittext"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:inputType="text"
+       android:lines="1" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantAddress_label"
+        android:textSize="15.5sp" />
+	<EditText
+       android:id="@+id/cinRestaurantAddress_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:lines="1" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantCapacity_label"
+        android:textSize="15.5sp" />
+	<EditText
+       android:id="@+id/cinRestaurantCapacity_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:lines="1" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantOpen_label"
+        android:textSize="15.5sp" />
+	<EditText
+       android:id="@+id/cinRestaurantOpen_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="time"
+       android:lines="1" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantClose_label"
+        android:textSize="15.5sp" />
+	<EditText
+       android:id="@+id/cinRestaurantClose_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="time"
        android:lines="1" />
     <Button
        android:id="@+id/submit_button"

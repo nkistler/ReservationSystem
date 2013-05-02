@@ -8,20 +8,25 @@ import android.view.View.OnClickListener;
 
 public class MainActivity extends Activity implements OnClickListener
 {
-    /** Called when the activity is first created. */
+	//start database
+	private DB db;
+	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 		
+        //grab db
+        db = new DB();
+        
         //set up buttons with their listeners
 		View reserveButton = findViewById(R.id.reserve_button);
 		reserveButton.setOnClickListener(this);
 		View cancelButton = findViewById(R.id.cancel_button);
 		cancelButton.setOnClickListener(this);
 		View adminButton = findViewById(R.id.admin_button);
-		adminButton.setOnClickListener(this);	
+		adminButton.setOnClickListener(this);
     }
     
     public void onClick(View v)
@@ -30,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener
     	if(v.getId() == R.id.reserve_button)
     	{
     		//reserve a table
-    		intent = new Intent(this, ReserveActivity.class); 
+    		intent = new Intent(this, ReserveActivity.class);
     	}
     	else if (v.getId() == R.id.cancel_button)
     	{
@@ -42,6 +47,20 @@ public class MainActivity extends Activity implements OnClickListener
     		//add or delete restaurant info
     		intent = new Intent(this, AdminLoginActivity.class);
     	}
+    	intent.putExtra("db", db);
     	startActivity(intent); 
 	}
+    
+    //getter and setter
+	public DB getDb()
+	{
+		return db;
+	}
+
+	public void setDb(DB db)
+	{
+		this.db = db;
+	}
+    
+    
 }

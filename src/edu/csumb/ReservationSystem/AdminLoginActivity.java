@@ -17,16 +17,21 @@ import android.widget.TextView;
  */
 public class AdminLoginActivity extends Activity implements OnClickListener
 {
+	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.administration);
 
+        db = (DB)getIntent().getSerializableExtra("db");
+        
         //set up buttons with their listeners
         View submitButton = findViewById(R.id.submit_button);
 		submitButton.setOnClickListener(this);
 		View backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);
+		
+		
     }
 	public void onClick(View v)
     {

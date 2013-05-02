@@ -19,6 +19,10 @@
 	<string name="reservationTime_label">Enter time of reservation</string>
 	<string name="customerName_label">Enter your name</string>
 	<string name="customerPhoneNumber_label">Enter your phone number</string>
+	<string name="restaurantAddress_label">Enter restaurant address</string>
+	<string name="restaurantCapacity_label">Enter restaurant capacity</string>
+	<string name="restaurantOpen_label">Enter opening time</string>
+	<string name="restaurantClose_label">Enter closing time</string>
 	
 
 </resources>

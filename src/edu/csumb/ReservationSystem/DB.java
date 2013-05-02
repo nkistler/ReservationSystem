@@ -1,12 +1,40 @@
 package edu.csumb.ReservationSystem;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DB
+@SuppressWarnings("serial") 
+public class DB implements Serializable
 {
-	private ArrayList<Restaurant> restaurantList = new ArrayList<Restaurant>();
-	private ArrayList<Reservation> reservationList = new ArrayList<Reservation>();
+	private ArrayList<Restaurant> restaurantList;
+	private ArrayList<Reservation> reservationList;
 	
+	public DB()
+	{
+		restaurantList = new ArrayList<Restaurant>();
+		reservationList = new ArrayList<Reservation>();
+		Restaurant temp = new Restaurant();
+		temp.setName("McDonalds");
+		restaurantList.add(temp);
+	}
+    
+    //getters and setters below
+	public ArrayList<Restaurant> getRestaurantList()
+	{
+		return restaurantList;
+	}
+	public void setRestaurantList(ArrayList<Restaurant> restaurantList)
+	{
+		this.restaurantList = restaurantList;
+	}
+	public ArrayList<Reservation> getReservationList()
+	{
+		return reservationList;
+	}
+	public void setReservationList(ArrayList<Reservation> reservationList)
+	{
+		this.reservationList = reservationList;
+	}
 	public void add(Restaurant restaurant)
 	{
 		this.restaurantList.add(restaurant);

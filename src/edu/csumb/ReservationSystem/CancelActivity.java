@@ -15,11 +15,14 @@ import android.view.View.OnClickListener;
  */
 public class CancelActivity extends Activity implements OnClickListener
 {
+	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reserve);
-
+		
+        db = (DB)getIntent().getSerializableExtra("db");
+        
         //set up buttons with their listeners
 		View backButton = findViewById(R.id.back_button);
 		backButton.setOnClickListener(this);

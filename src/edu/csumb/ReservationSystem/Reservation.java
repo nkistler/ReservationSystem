@@ -1,20 +1,31 @@
 package edu.csumb.ReservationSystem;
 
-import android.text.format.Time;
+import java.io.Serializable;
 
-public class Reservation
+@SuppressWarnings("serial") 
+public class Reservation implements Serializable
 {
-	private Time time;
+	private int time;
 	private Restaurant restaurant;
 	private String customerName;
 	private int customerPhoneNumber;
-	public Time getTime()
+	
+	public Reservation()
+	{
+		this.time=0;
+		this.restaurant=null;
+		this.customerName="";
+		this.customerPhoneNumber=0;
+	}
+	
+	//getters and setters
+	public int getTime()
 	{
 		return time;
 	}
-	public void setTime(long milliseconds)
+	public void setTime(int time)
 	{
-		this.time.set(milliseconds);
+		this.time = time;
 	}
 	public Restaurant getRestaurant()
 	{
@@ -42,7 +53,7 @@ public class Reservation
 	}
 	public boolean equals(Reservation r)
 	{
-	    if (r.getCustomerName().equals(this.getCustomerName()) && r.getRestaurant().equals(this.getRestaurant()) && r.getTime().equals(this.getTime()) && r.getCustomerPhoneNumber() == this.getCustomerPhoneNumber())
+	    if (r.getCustomerName().equals(this.getCustomerName()) && r.getRestaurant().equals(this.getRestaurant()) && r.getTime() == this.getTime() && r.getCustomerPhoneNumber() == this.getCustomerPhoneNumber())
 	    {
 	    	return true;
 	    }
