@@ -9,8 +9,10 @@ public class Restaurant implements Serializable
 	private String address;
 	private int totalSeats;
 	private int reservedSeats;
-	private int timeOpen;
-	private int timeClosed;
+	private int openHour;
+	private int openMin;
+	private int closeHour;
+	private int closeMin;
 	
 	public Restaurant()
 	{
@@ -18,8 +20,10 @@ public class Restaurant implements Serializable
 		this.address="";
 		this.totalSeats=0;
 		this.reservedSeats=0;
-		this.timeOpen=0;
-		this.timeClosed=0;
+		this.openHour=0;
+		this.openMin=0;
+		this.closeHour=0;
+		this.closeMin=0;
 	}
 	
 	//gettters and setters
@@ -55,21 +59,37 @@ public class Restaurant implements Serializable
 	{
 		this.reservedSeats = reservedSeats;
 	}
-	public int getTimeOpen()
+	public int getOpenHour()
 	{
-		return timeOpen;
+		return openHour;
 	}
-	public void setTimeOpen(int timeOpen)
+	public void setOpenHour(int openHour)
 	{
-		this.timeOpen = timeOpen;
+		this.openHour = openHour;
 	}
-	public int getTimeClosed()
+	public int getOpenMin()
 	{
-		return timeClosed;
+		return openMin;
 	}
-	public void setTimeClosed(int timeClosed)
+	public void setOpenMin(int openMin)
 	{
-		this.timeClosed = timeClosed;
+		this.openMin = openMin;
+	}
+	public int getCloseHour()
+	{
+		return closeHour;
+	}
+	public void setCloseHour(int closeHour)
+	{
+		this.closeHour = closeHour;
+	}
+	public int getCloseMin()
+	{
+		return closeMin;
+	}
+	public void setCloseMin(int closeMin)
+	{
+		this.closeMin = closeMin;
 	}
 	public boolean equals(Restaurant r)
 	{

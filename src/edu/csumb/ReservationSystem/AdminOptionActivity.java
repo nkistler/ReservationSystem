@@ -15,10 +15,13 @@ import android.view.View.OnClickListener;
  */
 public class AdminOptionActivity extends Activity implements OnClickListener
 {
+	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manage);
+        
+        db = (DB)getIntent().getSerializableExtra("db");
 
         //set up buttons with their listeners
         View restaurantsButton = findViewById(R.id.restaurants_button);
@@ -41,6 +44,7 @@ public class AdminOptionActivity extends Activity implements OnClickListener
 		{
 			intent = new Intent(this, MainActivity.class);
 		}
+		intent.putExtra("db", db);
 		startActivity(intent);
     }
 }

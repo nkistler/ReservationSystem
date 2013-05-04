@@ -4,16 +4,18 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="30dip" >
+    <TextView  
+       android:id="@+id/success_textview"
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_gravity="center"
+       android:text="@string/success_label"
+       android:textSize="20.5sp" />
     <Button
-       android:id="@+id/restaurants_button"
+       android:id="@+id/submit_button"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:text="@string/restaurants_label" />
-    <Button
-       android:id="@+id/reservations_button"
-       android:layout_width="fill_parent"
-       android:layout_height="wrap_content"
-       android:text="@string/reservations_label" />
+       android:text="@string/adminpanel_label" />
     <Button
        android:id="@+id/home_button"
        android:layout_width="fill_parent"

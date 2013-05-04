@@ -15,10 +15,13 @@ import android.view.View.OnClickListener;
  */
 public class AdminChooseRestaurantOptionActivity extends Activity implements OnClickListener
 {
+	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restaurantoption);
+        
+        db = (DB)getIntent().getSerializableExtra("db");
 
         //set up buttons with their listeners
         View addRestaurantsButton = findViewById(R.id.addrestaurants_button);
@@ -37,7 +40,7 @@ public class AdminChooseRestaurantOptionActivity extends Activity implements OnC
 		{
 			intent = new Intent(this, AdminAddRestaurantActivity.class);
 		}
-		else if(v.getId() == R.id.addrestaurants_button)
+		else if(v.getId() == R.id.deleterestaurants_button)
 		{
 			intent = new Intent(this, AdminDeleteRestaurantActivity.class);
 		}
@@ -49,6 +52,7 @@ public class AdminChooseRestaurantOptionActivity extends Activity implements OnC
 		{
 			intent = new Intent(this, MainActivity.class);
 		}
+		intent.putExtra("db", db);
 		startActivity(intent);
 	}
 }

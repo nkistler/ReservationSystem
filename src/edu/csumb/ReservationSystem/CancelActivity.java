@@ -15,6 +15,7 @@ import android.view.View.OnClickListener;
  */
 public class CancelActivity extends Activity implements OnClickListener
 {
+	@SuppressWarnings("unused") 
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
@@ -29,7 +30,11 @@ public class CancelActivity extends Activity implements OnClickListener
     }
 	public void onClick(View v)
     {
-		if(v.getId() == R.id.back_button)
+		if(v.getId() == R.id.submit_button)
+		{
+			
+		}
+		else if(v.getId() == R.id.back_button)
 		{
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);

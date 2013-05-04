@@ -14,7 +14,8 @@ import android.view.View.OnClickListener;
  *
  */
 public class ReserveActivity extends Activity implements OnClickListener
-{	
+{
+	@SuppressWarnings("unused") 
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {

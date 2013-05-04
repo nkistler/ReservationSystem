@@ -23,6 +23,8 @@
 	<string name="restaurantCapacity_label">Enter restaurant capacity</string>
 	<string name="restaurantOpen_label">Enter opening time</string>
 	<string name="restaurantClose_label">Enter closing time</string>
+	<string name="adminpanel_label">Back to Admin Panel</string>
+	<string name="success_label">Success</string>
 	
 
 </resources>

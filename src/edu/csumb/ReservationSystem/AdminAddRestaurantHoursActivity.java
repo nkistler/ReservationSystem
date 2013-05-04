@@ -8,20 +8,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 /**
  * @author Nathan
  *
  */
-public class AdminAddRestaurantActivity extends Activity implements OnClickListener
+public class AdminAddRestaurantHoursActivity extends Activity implements OnClickListener
 {
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inputrestaurant);
+        setContentView(R.layout.inputrestauranthours);
         
         db = (DB)getIntent().getSerializableExtra("db");
 
@@ -33,42 +33,44 @@ public class AdminAddRestaurantActivity extends Activity implements OnClickListe
     }
 	public void onClick(View v)
     {
-		EditText cinName, cinAddress, cinCapacity;
-		String name, address;
-		int capacity;
+		TimePicker cinOpen, cinClosed;
+		int openHour, openMin, closedHour, closedMin;
 		TextView result = null;
 		Intent intent = null;
 		if(v.getId() == R.id.submit_button)
-		{
+		{	
 			//this block of data must be verified for input
-			cinName = (EditText)findViewById(R.id.cinRestaurantName_edittext);
-			cinAddress = (EditText)findViewById(R.id.cinRestaurantAddress_edittext);
-			cinCapacity = (EditText)findViewById(R.id.cinRestaurantCapacity_edittext);
-			name = cinName.getText().toString();
-			address = cinAddress.getText().toString();
-			capacity = Integer.parseInt(cinCapacity.getText().toString());
-			if (!name.equals("") && !address.equals("") && capacity > 0)
+			cinOpen = (TimePicker)findViewById(R.id.cinRestaurantOpen_timepicker);
+			cinOpen.clearFocus();
+			cinClosed = (TimePicker)findViewById(R.id.cinRestaurantClose_timepicker);
+			cinClosed.clearFocus();
+			openHour = cinOpen.getCurrentHour();
+			openMin = cinOpen.getCurrentMinute();
+			closedHour = cinClosed.getCurrentHour();
+			closedMin = cinClosed.getCurrentMinute();
+	
+			if ((openHour == closedHour && openMin < closedMin) ||  (openHour < closedHour))
 			{
 				//data is valid so input to db
-				Restaurant temp = new Restaurant();
-				temp.setName(name);
-				temp.setAddress(address);
-				temp.setTotalSeats(capacity);
-				db.getRestaurantList().add(temp);
-				intent = new Intent(this, AdminAddRestaurantHoursActivity.class);
+				Restaurant temp = db.getRestaurantList().get(db.getRestaurantList().size()-1);
+				temp.setOpenHour(openHour);
+				temp.setOpenMin(openMin);
+				temp.setCloseHour(closedHour);
+				temp.setCloseMin(closedMin);
+				intent = new Intent(this, RestaurantSuccessActivity.class);
 				intent.putExtra("db", db);
 				startActivity(intent);
 			}
-			else if (name.equals("") || address.equals("") || capacity > 0)
+			else
 			{
 				//output error message
 				result = (TextView)findViewById(R.id.result_textview);
-				result.setText("The form is incomplete.");
+				result.setText("The hours entered are invalid.");
 			}
 		}
 		else if(v.getId() == R.id.back_button)
 		{
-			intent = new Intent(this, AdminChooseRestaurantOptionActivity.class);
+			intent = new Intent(this, AdminAddRestaurantActivity.class);
 			intent.putExtra("db", db);
 			startActivity(intent);
 		}

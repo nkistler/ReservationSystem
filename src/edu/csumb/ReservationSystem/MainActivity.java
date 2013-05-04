@@ -50,17 +50,4 @@ public class MainActivity extends Activity implements OnClickListener
     	intent.putExtra("db", db);
     	startActivity(intent); 
 	}
-    
-    //getter and setter
-	public DB getDb()
-	{
-		return db;
-	}
-
-	public void setDb(DB db)
-	{
-		this.db = db;
-	}
-    
-    
 }

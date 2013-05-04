@@ -25,5 +25,9 @@
         <activity android:name=".CancelActivity"/>
         <!--created by Nathan at 2013-04-30 22:29:24-->
         <activity android:name=".AdminDeleteRestaurantActivity"/>
+        <!--created by Nathan at 2013-05-03 16:30:05-->
+        <activity android:name=".AdminAddRestaurantHoursActivity"/>
+        <!--created by Nathan at 2013-05-03 17:21:55-->
+        <activity android:name=".RestaurantSuccessActivity"/>
     </application>
 </manifest>
