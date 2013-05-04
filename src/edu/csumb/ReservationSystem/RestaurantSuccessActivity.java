@@ -34,7 +34,7 @@ public class RestaurantSuccessActivity extends Activity implements OnClickListen
 		Intent intent=null;
 		if(v.getId() == R.id.submit_button)
 		{
-			intent = new Intent(this, AdminAddRestaurantActivity.class);
+			intent = new Intent(this, AdminAddRestaurantInfoActivity.class);
 		}
 		else if(v.getId() == R.id.home_button)
 		{

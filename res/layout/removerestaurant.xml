@@ -38,4 +38,11 @@
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
        android:text="@string/back_label" />
+    <TextView  
+       android:id="@+id/result_textview"
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_gravity="center"
+       android:text="@string/result_label"
+       android:textSize="20.5sp" />
 </LinearLayout>

@@ -38,7 +38,7 @@ public class AdminChooseRestaurantOptionActivity extends Activity implements OnC
 		Intent intent = null;
 		if(v.getId() == R.id.addrestaurants_button)
 		{
-			intent = new Intent(this, AdminAddRestaurantActivity.class);
+			intent = new Intent(this, AdminAddRestaurantInfoActivity.class);
 		}
 		else if(v.getId() == R.id.deleterestaurants_button)
 		{

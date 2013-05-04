@@ -5,27 +5,50 @@ import java.io.Serializable;
 @SuppressWarnings("serial") 
 public class Reservation implements Serializable
 {
-	private int time;
+	private int timeHour;
+	private int timeMin;
 	private Restaurant restaurant;
 	private String customerName;
 	private int customerPhoneNumber;
 	
 	public Reservation()
 	{
-		this.time=0;
+		this.timeHour=0;
+		this.timeMin=0;
 		this.restaurant=null;
 		this.customerName="";
 		this.customerPhoneNumber=0;
 	}
 	
-	//getters and setters
-	public int getTime()
+	public boolean equals(Object r)
 	{
-		return time;
+		Reservation temp = (Reservation)r;
+	    if (this.getCustomerName().equals(temp.getCustomerName()) && this.getCustomerPhoneNumber()==temp.getCustomerPhoneNumber() && this.getRestaurant().equals(temp.getRestaurant()) && this.getTimeHour()==temp.getTimeHour() && this.getTimeMin()==temp.getTimeMin())
+	    {
+	    	return true;
+	    }
+	    else
+	    {
+	    	return false;
+	    }
 	}
-	public void setTime(int time)
+	
+	//getters and setters
+	public int getTimeHour()
 	{
-		this.time = time;
+		return timeHour;
+	}
+	public void setTimeHour(int timeHour)
+	{
+		this.timeHour = timeHour;
+	}
+	public int getTimeMin()
+	{
+		return timeMin;
+	}
+	public void setTimeMin(int timeMin)
+	{
+		this.timeMin = timeMin;
 	}
 	public Restaurant getRestaurant()
 	{
@@ -50,16 +73,5 @@ public class Reservation implements Serializable
 	public void setCustomerPhoneNumber(int customerPhoneNumber)
 	{
 		this.customerPhoneNumber = customerPhoneNumber;
-	}
-	public boolean equals(Reservation r)
-	{
-	    if (r.getCustomerName().equals(this.getCustomerName()) && r.getRestaurant().equals(this.getRestaurant()) && r.getTime() == this.getTime() && r.getCustomerPhoneNumber() == this.getCustomerPhoneNumber())
-	    {
-	    	return true;
-	    }
-	    else
-	    {
-	    	return false;
-	    }
 	}
 }

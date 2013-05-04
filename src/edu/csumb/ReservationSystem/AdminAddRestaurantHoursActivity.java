@@ -70,7 +70,7 @@ public class AdminAddRestaurantHoursActivity extends Activity implements OnClick
 		}
 		else if(v.getId() == R.id.back_button)
 		{
-			intent = new Intent(this, AdminAddRestaurantActivity.class);
+			intent = new Intent(this, AdminAddRestaurantInfoActivity.class);
 			intent.putExtra("db", db);
 			startActivity(intent);
 		}

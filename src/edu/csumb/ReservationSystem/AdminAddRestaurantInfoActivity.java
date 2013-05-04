@@ -15,7 +15,7 @@ import android.widget.TextView;
  * @author Nathan
  *
  */
-public class AdminAddRestaurantActivity extends Activity implements OnClickListener
+public class AdminAddRestaurantInfoActivity extends Activity implements OnClickListener
 {
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)

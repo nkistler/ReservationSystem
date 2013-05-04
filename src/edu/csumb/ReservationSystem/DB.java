@@ -13,9 +13,22 @@ public class DB implements Serializable
 	{
 		restaurantList = new ArrayList<Restaurant>();
 		reservationList = new ArrayList<Reservation>();
-		Restaurant temp = new Restaurant();
-		temp.setName("McDonalds");
-		restaurantList.add(temp);
+		Restaurant temp1 = new Restaurant();
+		temp1.setName("McDonalds");
+		temp1.setAddress("267 Reservation Rd, Marina, CA 93933");
+		restaurantList.add(temp1);
+		Restaurant temp2 = new Restaurant();
+		temp2.setName("Chef Hannes");
+		temp2.setAddress("411 Main St, El Segundo, CA 90245");
+		restaurantList.add(temp2);
+		Restaurant temp3 = new Restaurant();
+		temp3.setName("Mama Ds");
+		temp3.setAddress("1125 Manhattan Ave, Manhattan Beach, CA 90266");
+		restaurantList.add(temp3);
+		Restaurant temp4 = new Restaurant();
+		temp4.setName("Pho Kimmy");
+		temp4.setAddress("14932 Bushard St, Westminster, CA 92683");
+		restaurantList.add(temp4);
 	}
     
     //getters and setters below

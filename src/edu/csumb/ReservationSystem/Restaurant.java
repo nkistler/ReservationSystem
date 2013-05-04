@@ -26,7 +26,21 @@ public class Restaurant implements Serializable
 		this.closeMin=0;
 	}
 	
-	//gettters and setters
+	@Override
+	public boolean equals(Object r)
+	{
+		Restaurant temp = (Restaurant)r;	
+	    if (this.getName().equals(temp.getName()) && this.getAddress().equals(temp.getAddress()))
+	    {
+	    	return true;
+	    }
+	    else
+	    {
+	    	return false;
+	    }
+	}
+	
+	//getters and setters
 	public String getName()
 	{
 		return name;
@@ -91,16 +105,7 @@ public class Restaurant implements Serializable
 	{
 		this.closeMin = closeMin;
 	}
-	public boolean equals(Restaurant r)
-	{
-	    if (r.getName().equals(this.getName()) && r.getAddress().equals(this.getAddress()))
-	    {
-	    	return true;
-	    }
-	    else
-	    {
-	    	return false;
-	    }
-	}
+	
+	
 	
 }

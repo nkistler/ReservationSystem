@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * @author Nathan
@@ -31,12 +33,36 @@ public class AdminDeleteRestaurantActivity extends Activity implements OnClickLi
     }
 	public void onClick(View v)
     {
+		EditText cinName, cinAddress;
+		String name, address;
+		TextView result = null;
 		Intent intent = null;
 		if(v.getId() == R.id.submit_button)
 		{
 			//search for restaurant
-			//delete if found and report
+			//delete if found
 			//report if not found
+			cinName = (EditText)findViewById(R.id.cinRestaurantName_edittext);
+			cinAddress = (EditText)findViewById(R.id.cinRestaurantAddress_edittext);
+			name = cinName.getText().toString();
+			address = cinAddress.getText().toString();
+			Restaurant temp = new Restaurant();
+			temp.setName(name);
+			temp.setAddress(address);
+			result = (TextView)findViewById(R.id.result_textview);
+			if (name.equals("") || address.equals(""))
+			{
+				result.setText("The form is incomplete.");
+			}
+			else if (db.getRestaurantList().contains(temp)) //this branch deletes the element
+			{
+				result.setText(db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)).getName() + " has been removed.");
+				db.getRestaurantList().remove(temp);
+			}
+			else
+			{
+				result.setText("No matching restaurants found.");
+			}
 		}
 		else if(v.getId() == R.id.back_button)
 		{
