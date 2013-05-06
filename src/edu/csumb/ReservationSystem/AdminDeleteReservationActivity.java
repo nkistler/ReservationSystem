@@ -15,7 +15,7 @@ import android.widget.TextView;
  * @author Nathan
  *
  */
-public class CancelActivity extends Activity implements OnClickListener
+public class AdminDeleteReservationActivity extends Activity implements OnClickListener
 {
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)
@@ -75,7 +75,7 @@ public class CancelActivity extends Activity implements OnClickListener
 		}
 		else if(v.getId() == R.id.back_button)
 		{
-			Intent intent = new Intent(this, MainActivity.class);
+			Intent intent = new Intent(this, AdminChooseReservationOptionActivity.class);
 			intent.putExtra("db", db);
 			startActivity(intent);
 		}

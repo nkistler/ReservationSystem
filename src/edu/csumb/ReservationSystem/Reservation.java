@@ -23,7 +23,7 @@ public class Reservation implements Serializable
 	public boolean equals(Object r)
 	{
 		Reservation temp = (Reservation)r;
-	    if (this.getCustomerName().equals(temp.getCustomerName()) && this.getCustomerPhoneNumber()==temp.getCustomerPhoneNumber() && this.getRestaurant().equals(temp.getRestaurant()) && this.getTimeHour()==temp.getTimeHour() && this.getTimeMin()==temp.getTimeMin())
+	    if (this.getCustomerName().equals(temp.getCustomerName()) && this.getCustomerPhoneNumber()==temp.getCustomerPhoneNumber() && this.getRestaurant().equals(temp.getRestaurant()))
 	    {
 	    	return true;
 	    }

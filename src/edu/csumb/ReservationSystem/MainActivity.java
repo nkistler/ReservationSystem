@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements OnClickListener
     	if(v.getId() == R.id.reserve_button)
     	{
     		//reserve a table
-    		intent = new Intent(this, ReserveActivity.class);
+    		intent = new Intent(this, ReserveInfoActivity.class);
     	}
     	else if (v.getId() == R.id.cancel_button)
     	{

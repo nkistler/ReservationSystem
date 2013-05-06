@@ -13,31 +13,28 @@ import android.view.View.OnClickListener;
  * @author Nathan
  *
  */
-public class ReserveActivity extends Activity implements OnClickListener
+public class ReservationAddedActivity extends Activity implements OnClickListener
 {
-	@SuppressWarnings("unused") 
 	private DB db;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.reserve);
+        setContentView(R.layout.usersuccess);
         
         db = (DB)getIntent().getSerializableExtra("db");
-        
+
         //set up buttons with their listeners
-		View backButton = findViewById(R.id.back_button);
-		backButton.setOnClickListener(this);
+        View submitButton = findViewById(R.id.submit_button);
+        submitButton.setOnClickListener(this);
     }
 	public void onClick(View v)
     {
+		Intent intent=null;
 		if(v.getId() == R.id.submit_button)
 		{
-			
+			intent = new Intent(this, MainActivity.class);	
 		}
-		else if(v.getId() == R.id.back_button)
-		{
-			Intent intent = new Intent(this, MainActivity.class);
-			startActivity(intent);
-		}
-	}
+		intent.putExtra("db", db);
+		startActivity(intent);
+    }
 }

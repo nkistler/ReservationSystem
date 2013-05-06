@@ -4,12 +4,19 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:padding="30dip" >
+    <TextView  
+       android:id="@+id/result_textview"
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_gravity="center"
+       android:text="@string/result_label"
+       android:textSize="12sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/restaurantName_label"
-        android:textSize="20.5sp" />
+        android:textSize="12sp" />
 	<EditText
        android:id="@+id/cinRestaurantName_edittext"
        android:layout_width="fill_parent"
@@ -20,20 +27,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/reservationTime_label"
-        android:textSize="20.5sp" />
+        android:text="@string/restaurantAddress_label"
+        android:textSize="12sp" />
 	<EditText
-       android:id="@+id/cinReservationTime_edittext"
+       android:id="@+id/cinRestaurantAddress_edittext"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:inputType="time"
+       android:inputType="text"
        android:lines="1" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/customerName_label"
-        android:textSize="20.5sp" />
+        android:textSize="12sp" />
 	<EditText
        android:id="@+id/cinCustomerName_edittext"
        android:layout_width="fill_parent"
@@ -45,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/customerPhoneNumber_label"
-        android:textSize="20.5sp" />
+        android:textSize="12sp" />
 	<EditText
        android:id="@+id/cinCustomerPhoneNumber_edittext"
        android:layout_width="fill_parent"

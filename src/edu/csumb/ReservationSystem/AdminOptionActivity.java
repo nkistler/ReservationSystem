@@ -38,7 +38,7 @@ public class AdminOptionActivity extends Activity implements OnClickListener
 		}
 		else if (v.getId() == R.id.reservations_button)
 		{
-			intent = new Intent(this, AdminManageReservationsActivity.class);
+			intent = new Intent(this, AdminChooseReservationOptionActivity.class);
 		}
 		else if (v.getId() == R.id.home_button)
 		{

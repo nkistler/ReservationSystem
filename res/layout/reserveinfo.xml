@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="30dip" >
+    <TextView  
+       android:id="@+id/result_textview"
+       android:layout_width="wrap_content" 
+       android:layout_height="wrap_content" 
+       android:layout_gravity="center"
+       android:text="@string/result_label"
+       android:textSize="12sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantName_label"
+        android:textSize="12sp" />
+	<EditText
+       android:id="@+id/cinRestaurantName_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:lines="1" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/restaurantAddress_label"
+        android:textSize="12sp" />
+	<EditText
+       android:id="@+id/cinRestaurantAddress_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:lines="1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/customerName_label"
+        android:textSize="12sp" />
+	<EditText
+       android:id="@+id/cinCustomerName_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="text"
+       android:lines="1" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/customerPhoneNumber_label"
+        android:textSize="12sp" />
+	<EditText
+       android:id="@+id/cinCustomerPhoneNumber_edittext"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:inputType="phone"
+       android:lines="1" />
+    <Button
+       android:id="@+id/submit_button"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/submit_label" />
+    <Button
+       android:id="@+id/back_button"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:text="@string/back_label" />
+</LinearLayout>

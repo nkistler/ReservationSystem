@@ -10,7 +10,7 @@
             </intent-filter>
         </activity>
         <!--created by Nathan at 2013-04-30 19:09:20-->
-        <activity android:name="edu.csumb.ReservationSystem.ReserveActivity"/>
+        <activity android:name="edu.csumb.ReservationSystem.ReserveInfoActivity"/>
         <!--created by Nathan at 2013-04-30 19:55:49-->
         <activity android:name=".AdminLoginActivity"/>
         <!--created by Nathan at 2013-04-30 20:42:59-->
@@ -29,5 +29,17 @@
         <activity android:name=".AdminAddRestaurantHoursActivity"/>
         <!--created by Nathan at 2013-05-03 17:21:55-->
         <activity android:name=".RestaurantSuccessActivity"/>
+        <!--created by Nathan at 2013-05-06 12:18:54-->
+        <activity android:name=".AdminAddReservationInfoActivity"/>
+        <!--created by Nathan at 2013-05-06 12:48:31-->
+        <activity android:name=".ReserveTimeActivity"/>
+        <!--created by Nathan at 2013-05-06 12:49:23-->
+        <activity android:name=".AdminAddReservationTimeActivity"/>
+        <!--created by Nathan at 2013-05-06 13:02:56-->
+        <activity android:name=".ReservationSuccessActivity"/>
+        <!--created by Nathan at 2013-05-06 13:51:02-->
+        <activity android:name=".ReservationAddedActivity"/>
+        <!--created by Nathan at 2013-05-06 15:30:46-->
+        <activity android:name=".AdminDeleteReservationActivity"/>
     </application>
 </manifest>
