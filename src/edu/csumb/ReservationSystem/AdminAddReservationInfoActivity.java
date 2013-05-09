@@ -70,6 +70,7 @@ public class AdminAddReservationInfoActivity extends Activity implements OnClick
 				reservation.setCustomerPhoneNumber(customerPhone);
 				if (db.getRestaurantList().contains(temp))
 				{
+					reservation.setRestaurant(db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)));
 					int capacity=0, reserved=0;
 					capacity = db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)).getTotalSeats();
 					reserved = db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)).getReservedSeats();

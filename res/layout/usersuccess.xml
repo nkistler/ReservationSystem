@@ -15,5 +15,5 @@
        android:id="@+id/submit_button"
        android:layout_width="fill_parent"
        android:layout_height="wrap_content"
-       android:text="@string/adminpanel_label" />
+       android:text="@string/home_label" />
 </LinearLayout>

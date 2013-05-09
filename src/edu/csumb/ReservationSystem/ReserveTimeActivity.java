@@ -35,7 +35,7 @@ public class ReserveTimeActivity extends Activity implements OnClickListener
     {
 		TextView result;
 		TimePicker cinTime;
-		int hour, minute, openMin, openHour, closeMin, closeHour;
+		int hour, minute, size, openMin, openHour, closeMin, closeHour;
 		Intent intent = null;
 		if(v.getId() == R.id.submit_button)
 		{	
@@ -44,11 +44,13 @@ public class ReserveTimeActivity extends Activity implements OnClickListener
 			cinTime.clearFocus();
 			hour = cinTime.getCurrentHour();
 			minute = cinTime.getCurrentMinute();
-			openHour = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getOpenHour();
-			openMin = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getOpenMin();
-			closeHour = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getCloseHour();
-			closeMin = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getCloseMin();
-			if ((hour >= openHour && minute > openMin) && (hour <= closeHour && minute < closeMin))//check if hours are valid
+			size = db.getReservationList().size();
+			System.out.println(size);
+			openHour = db.getReservationList().get(size-1).getRestaurant().getOpenHour();
+			openMin = db.getReservationList().get(size-1).getRestaurant().getOpenMin();
+			closeHour = db.getReservationList().get(size-1).getRestaurant().getCloseHour();
+			closeMin = db.getReservationList().get(size-1).getRestaurant().getCloseMin();
+			if ((hour > openHour && hour < closeHour) || (hour == openHour && minute > openMin) || (hour == closeHour && minute < closeMin))//check if hours are valid
 			{
 				//data is valid so input to db
 				Reservation temp = db.getReservationList().get(db.getReservationList().size()-1);
@@ -67,7 +69,7 @@ public class ReserveTimeActivity extends Activity implements OnClickListener
 		}
 		else if(v.getId() == R.id.back_button)
 		{
-			intent = new Intent(this, AdminAddRestaurantInfoActivity.class);
+			intent = new Intent(this, ReserveInfoActivity.class);
 			intent.putExtra("db", db);
 			startActivity(intent);
 		}

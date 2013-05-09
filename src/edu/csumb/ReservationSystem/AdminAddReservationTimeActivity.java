@@ -48,7 +48,7 @@ public class AdminAddReservationTimeActivity extends Activity implements OnClick
 			openMin = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getOpenMin();
 			closeHour = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getCloseHour();
 			closeMin = db.getReservationList().get(db.getReservationList().size()-1).getRestaurant().getCloseMin();
-			if ((hour >= openHour && minute > openMin) && (hour <= closeHour && minute < closeMin))//check if hours are valid
+			if ((hour > openHour && hour < closeHour) || (hour == openHour && minute > openMin) || (hour == closeHour && minute < closeMin))//check if hours are valid
 			{
 				//data is valid so input to db
 				Reservation temp = db.getReservationList().get(db.getReservationList().size()-1);

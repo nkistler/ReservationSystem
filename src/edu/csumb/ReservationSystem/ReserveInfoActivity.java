@@ -43,13 +43,9 @@ public class ReserveInfoActivity extends Activity implements OnClickListener
 			//redirect to time input if data valid
 			//output error if not valid
 			cinRestaurantName = (EditText)findViewById(R.id.cinRestaurantName_edittext);
-			cinRestaurantName.clearFocus();
 			cinRestaurantAddress = (EditText)findViewById(R.id.cinRestaurantAddress_edittext);
-			cinRestaurantAddress.clearFocus();
 			cinCustomerName = (EditText)findViewById(R.id.cinCustomerName_edittext);
-			cinCustomerName.clearFocus();
 			cinCustomerPhone = (EditText)findViewById(R.id.cinCustomerPhoneNumber_edittext);
-			cinCustomerPhone.clearFocus();
 			restaurantName = cinRestaurantName.getText().toString();
 			restaurantAddress = cinRestaurantAddress.getText().toString();
 			customerName = cinCustomerName.getText().toString();
@@ -70,6 +66,7 @@ public class ReserveInfoActivity extends Activity implements OnClickListener
 				reservation.setCustomerPhoneNumber(customerPhone);
 				if (db.getRestaurantList().contains(temp))
 				{
+					reservation.setRestaurant(db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)));
 					int capacity=0, reserved=0;
 					capacity = db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)).getTotalSeats();
 					reserved = db.getRestaurantList().get(db.getRestaurantList().indexOf(temp)).getReservedSeats();

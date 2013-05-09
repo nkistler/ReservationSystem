@@ -99,20 +99,4 @@ public class DB implements Serializable
 	{
 		this.reservationList = reservationList;
 	}
-	public void add(Restaurant restaurant)
-	{
-		this.restaurantList.add(restaurant);
-	}
-	public void add(Reservation reservation)
-	{
-		this.reservationList.add(reservation);
-	}
-	public boolean delete(Restaurant restaurant)
-	{
-		return this.restaurantList.remove(restaurant);
-	}
-	public boolean delete(Reservation reservation)
-	{
-		return this.reservationList.remove(reservation);
-	}
 }
